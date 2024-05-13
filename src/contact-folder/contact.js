@@ -40,9 +40,11 @@ const Contact = () => {
                                 <Form.Control as="textarea" name="message" rows={3} placeholder="Your Message" size="md" className="mb-3 contact-input" />
                                 <ValidationError prefix="Message" field="message" errors={state.errors} />
                             </Form.Group>
-                            <Button variant="primary" type="submit" disabled={state.submitting}>
-                                {state.submitting ? 'Sending...' : 'Send'}
-                            </Button>
+                            <Button variant="primary" type="submit" disabled={state.submitting} className="small-width-button">
+    {state.submitting ? 'Sending...' : 'Send'}
+</Button>
+
+
                         </Form>
                     )}
                 </Col>

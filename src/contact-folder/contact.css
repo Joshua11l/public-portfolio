@@ -9,6 +9,11 @@
     border-bottom: none; /* No bottom border */
 }
 
+.small-width-button {
+    width: 100px !important; /* or any width you prefer */
+}
+
+
 .contact-header{
     font-size: 3rem; /* Larger heading */
     color: rgb(65, 157, 255); /* Dark gray text */
@@ -59,7 +64,7 @@
 
 .btn-primary {
     display: block; /* Block level so it doesn't sit inline */
-    width: 50%; /* Matching button width to input widths */
+    width: 50% !important; /* Matching button width to input widths */
     margin: 20px auto 0; 
     background-color: rgb(0, 123, 255) ;
     font-weight: bold;/* Extra margin on top, auto for centering */

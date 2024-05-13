@@ -9,6 +9,13 @@ body {
   background-attachment: fixed;
 }
 
+@media (max-width: 768px) { /* Adjusts settings for mobile devices */
+  body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.977)) !important; /* Gradient black background with the image */
+    /* Set background color to black */
+  }
+}
+
 
 .App {
   text-align: center;
