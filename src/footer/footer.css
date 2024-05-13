@@ -1,0 +1,21 @@
+/* footer.css */
+.footer {
+    padding: 20px 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    width: 100%;
+    font-size: medium;
+    border-top: 1px solid #b3b3b3; /* Optional: subtle top border for a more defined look */
+}
+
+.container-footer {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+}
+
+.footer-text {
+    color: #fff;
+    opacity: 0.8; /* Slightly muted white for a softer appearance */
+    letter-spacing: 1px; /* Slight spacing for a touch of elegance */
+}

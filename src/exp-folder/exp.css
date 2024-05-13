@@ -1,0 +1,79 @@
+.custom-container {
+    height: 80vh; /* Container height as 80% of the viewport height */
+    margin-top: 8rem;
+    margin-bottom: 12rem; /* Top margin for scrolling if content exceeds container height */
+    max-width: 960px; /* Maximum width of the container */
+    padding: 20px; /* Padding around the content */
+}
+
+/* Sets text color to white for descriptions */
+.description-text {
+    color: white !important;
+    text-align: left;
+}
+
+
+.custom-container h3 {
+    color: white;
+    font-weight: 500;
+}
+/* Assuming your CSS file is exp.css as mentioned in the import statement */
+ .custom-container p {
+    color: white; /* Makes text white for company title and description */
+}
+
+.custom-container h5 {
+    color: rgb(65, 157, 255); /* Makes text blue for job title */
+}
+
+
+.exp-title h2 {
+    font-size: 3rem; /* Larger heading size */
+    color: rgb(65, 157, 255); /* Dark gray text */
+    font-weight: 700;
+    margin-bottom: 2rem; /* Space below the title */
+}
+
+.exp-work-title {
+    font-size: 2rem; /* Set size for work title */
+    color: #fff; /* White color for visibility */
+    margin-bottom: 1.5rem; /* Space below the work title */
+}
+.nav-pills .nav-link {
+    padding: 12px 24px; /* Increased padding for a wider appearance */
+    margin: 5px 0; /* Slight margin between buttons for spacing */
+    font-size: 1.1rem;
+    font-weight: bold; /* Larger font size for better readability */
+    border-radius: 5px; /* Rounded corners for aesthetic preference */
+    color: #ccc; /* Lower contrast for inactive state */
+    text-decoration: none; /* Removes underline from links */
+    display: block; /* Ensures the link uses the full space of its container */
+    opacity: 0.6; /* Reduced opacity for inactive links */
+    transition: color 0.3s, background-color 0.3s, opacity 0.3s; /* Smooth transitions for hover/focus */
+}
+
+.nav-pills .nav-link:hover, .nav-pills .nav-link:focus {
+    opacity: 1; /* Full opacity on hover/focus */
+    color: #fff !important; /* White text on hover/focus */
+    background-color: #0056b3; /* Darker background on hover/focus for better visibility */
+}
+
+.nav-pills .nav-link.active {
+    background-color: #007bff; /* Bootstrap primary color for active state */
+    color: #fff; /* White text for active state */
+    opacity: 1; /* Full opacity for active link */
+}
+
+
+@media (max-width: 500px) {
+    .custom-container {
+        padding: 5px; /* Less padding in the container for more space */
+    }
+
+    .nav-pills .nav-link {
+        padding: 6px 12px; /* Even smaller padding for very small screens */
+        font-size: 0.8rem; /* Even smaller font size for better fit */
+    }
+
+    
+}

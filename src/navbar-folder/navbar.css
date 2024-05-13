@@ -1,0 +1,102 @@
+
+.navbar-transparent {
+  background-color: transparent !important;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.navbar-dark.bg-dark {
+  background-color: rgba(0, 0, 0, 0.75) !important; /* Adjust opacity to desired level */
+  transition: background-color 0.4s ease-in-out;
+  backdrop-filter: blur(10px); /* Apply a blur effect to elements behind the navbar */
+}
+
+.logo {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.nav-link, .resume-button {
+  margin-right: 25px; /* Ensure consistent margin for all items */
+  font-size: large;
+  color: white !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: relative; /* Required for positioning the pseudo-element */
+}
+
+.resume-button:hover, .resume-button:focus {
+  color: white;
+  background-color: rgb(0, 121, 251); /* Light blue background for a highlight effect */
+  border-color: rgb(255, 255, 255); /* Blue border */
+}
+
+.resume-button {
+  background: none; /* Remove default background to match outline effect */
+  border-color: white; /* Set the border color to white to match outline-light variant */
+  border-radius: 0; /* Optional: Remove border radius if you prefer squared buttons */
+  margin-right: 25px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Thicker underline, adjust if needed */
+  background-color: rgb(65, 157, 255); /* Color of the underline */
+  transition: width 0.3s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+/* Hover effect - expands the underline from left to right */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Additional styles for fixed-top and color transitions */
+.navbar-dark.bg-dark .nav-link,
+.navbar-transparent .nav-link {
+  color: #fff; /* Ensures text is white for visibility */
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.navbar-dark.bg-dark .nav-link:hover,
+.navbar-transparent .nav-link:hover {
+  color: #00aeff; /* Optional: change text color on hover */
+}
+
+/* This sets the navbar toggler color */
+
+
+
+/* Responsive behavior and styling for mobile devices */
+@media (max-width: 768px) {
+  .navbar-dark.bg-dark,
+  .navbar-transparent {
+    background-color: black !important; /* Fully opaque black for mobile */
+  }
+  .navbar-light .navbar-toggler {
+    background-color: rgb(0, 0, 0) !important;
+    color: black !important;
+    margin-right: 1rem; /* Lightens the border slightly */
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+      justify-content: center; /* Center the nav items */
+  }
+
+  .nav-link, .resume-button {
+      margin: 10px 5px; /* Increase spacing between items */
+      text-align: center; /* Ensure text in nav items is centered */
+  }
+
+ 
+
+  .navbar-toggler {
+      margin-left: auto;
+       /* Push the toggler to the right on smaller screens */
+  }
+}

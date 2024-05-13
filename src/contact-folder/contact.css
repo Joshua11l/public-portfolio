@@ -1,0 +1,84 @@
+/* contact.css */
+.contact-section {
+    background-color: #000; /* Black background for the section */
+    color: #fff; /* White text */
+    padding: 40px 0; /* Padding around the section */
+    border-top: 1px solid #fff; /* White top border */
+    border-left: 1px solid #fff; /* White left border */
+    border-right: 1px solid #fff; /* White right border */
+    border-bottom: none; /* No bottom border */
+}
+
+.contact-header{
+    font-size: 3rem; /* Larger heading */
+    color: rgb(65, 157, 255); /* Dark gray text */
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.contact-me {
+    font-size: 1.7rem; /* Larger heading */
+    color: white; /* Dark gray text */
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns icons horizontally */
+    gap: 15px; /* Space between social icons and text */
+}
+
+.social-icon {
+    font-size: 30px; /* Icon size */
+    color: #fff; /* Icon color */
+    background-color: #000; /* Black background circle */
+    border: 2px solid #fff; /* White border */
+    border-radius: 10%; /* Circle shape */
+    display: inline-flex; /* Align icon within the circle */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    padding: 5px; /* Space around the icon */
+    margin-right: 5px;
+    margin-bottom: 1rem; /* Space between icons */
+}
+
+.social-icon:hover {
+    color: rgb(65, 157, 255); /* Change color on hover */
+    border-color: rgb(65, 157, 255); /* Change border color on hover */
+}
+
+.social-icon:hover {
+    color: rgb(65, 157, 255); /* Lighter grey color on hover */
+}
+
+.contact-form .contact-input {
+    width: 75%; /* Smaller width for text boxes */
+    margin: auto; /* Centering the inputs */
+}
+
+.btn-primary {
+    display: block; /* Block level so it doesn't sit inline */
+    width: 50%; /* Matching button width to input widths */
+    margin: 20px auto 0; 
+    background-color: rgb(0, 123, 255) ;
+    font-weight: bold;/* Extra margin on top, auto for centering */
+}
+
+.btn-primary:hover {
+background-color: rgb(0, 90, 186) ;
+}
+
+@media (max-width: 576px) {
+    .contact-header {
+        font-size: 2.5rem; /* Smaller font size on mobile */
+    }
+
+    .contact-me {
+        font-size: 1rem; /* Smaller font size on mobile */
+    }
+
+    .social-icon {
+        font-size: 20px; /* Smaller icon size on mobile */
+    }
+}

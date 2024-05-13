@@ -1,0 +1,123 @@
+.intro-container {
+    height: 100vh;
+  }
+  
+  .intro-mark {
+    color: white !important;
+  }
+  
+  .intro-hello {
+    color: white;
+  }
+  
+  .intro-content-container {
+    height: 100%;
+  }
+
+ 
+  .intro-message h1 {
+    font-size: 3.5rem;
+    color: rgba(65, 157, 255, 0.953);
+    font-weight: 700;
+    padding-left: 3rem;
+  }
+
+  .contact-me-btn {
+    background-color: rgb(0, 100, 206) !important;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border: 1px solid rgb(0, 100, 206) !important;
+  }
+
+  .contact-me-btn:hover {
+background-color: rgb(0, 56, 115) !important;
+border-color: rgb(0, 56, 115) !important ;
+  }
+  
+
+  .intro-image {
+    border-radius: 50%; /* Makes the image round */
+    border: 5px solid rgba(0, 0, 0, 0.6); /* Transparent black border */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 450px; /* Set a specific width, adjust as needed */
+    height: 450px; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* White box shadow for a 'lifted' effect */
+}
+
+  
+  .highlight-name {
+    font-size: 2rem; /* Increases the font size */
+    font-weight: bold; /* Makes the text bold */
+    color: rgb(65, 157, 255); /* Changes the text color to blue */
+  }
+
+  .intro-text {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 300 !important;
+    padding-left: 2rem;
+
+  }
+
+  .intro-container {
+    padding-top: 5rem;
+  }
+
+  .intro-message {
+    margin-left: 1rem;
+  }
+
+  .typing-cursor {
+    opacity: 1;
+    animation: blink 1s step-start infinite;
+  }
+
+
+  
+  
+  .visible {
+    visibility: visible;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .intro-message h1 {
+      font-size: 3rem;
+      padding-left: 0;/* Add padding to keep text from touching screen edges */
+      /* Smaller font size for mobile */
+    }
+  
+    .intro-text {
+      font-size: 1.7rem; /* Adjust text size for better readability on mobile */
+      padding: 0 20px; 
+      padding-left: 0;/* Add padding to keep text from touching screen edges */
+    }
+  
+    .intro-image {
+      width: 450px; /* Smaller image size for mobile */
+      height: 450px;
+    }
+  
+    /* Ensure all content in the intro container is centered */
+    .intro-container, .intro-message, .contact-me-btn {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* Adjust button size and spacing for mobile */
+    .contact-me-btn {
+      width: 10rem !important;
+      padding: 10px 20px; /* Larger touch area for easier interaction */
+      font-size: 1.2rem; /* Larger font size for visibility */
+    }
+  }
+  

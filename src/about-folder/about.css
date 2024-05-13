@@ -1,0 +1,89 @@
+.about-container {
+margin-top: 8rem;
+margin-bottom: 12rem;
+}
+
+.image-container {
+  width: 100%; /* or a specific pixel width */
+}
+
+.profile-image {
+  width: 100%; /* makes the image responsive within the container */
+  height: auto; /* maintains the aspect ratio */
+}
+
+
+
+  .about-heading {
+    font-size: 3rem; /* Larger heading */
+    color: rgb(65, 157, 255); /* Dark gray text */
+    font-weight: 700;
+    margin-top: 2rem;
+  }
+  
+  .skill-card {
+    
+    padding: 0px !important; 
+    max-width: 100%;/* smaller padding */
+    height: 60%;
+    border-color: white;
+    background-color: black;
+  }
+  
+  .skill-icon {
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    color: white; /* smaller icon size */
+  }
+  
+  .skill-title {
+    margin: 0; /* remove margin around the title for tighter text */
+    font-size: larger;
+    text-align: left;
+    color: rgb(65, 157, 255);
+    font-weight: bold; /* Dark gray text */
+    /* adjust text size if necessary */
+    padding: 5px;
+  }
+  .about-text {
+    font-size: larger; /* Larger text */
+    color: #ffffff; /* Gray text */
+    font-weight: 300;
+  }
+
+  .skills-heading{
+    font-size: 3rem; /* Larger heading */
+    color: rgb(65, 157, 255); /* Dark gray text */
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  
+  .about-card {
+    background-color: rgb(65, 157, 255); /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: box-shadow 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .about-card:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  .card-heading {
+    font-size: xx-large; /* Larger heading */
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 15px; /* Dark gray text */
+  }
+  
+ 
+  
+  .card-list {
+    font-size: 18px; /* Larger text */
+    color: #ffffff; /* Gray text */
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: 300;/* Spacing between list items */
+  }
+  
+  
