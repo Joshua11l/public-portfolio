@@ -102,6 +102,8 @@ border-color: rgb(0, 56, 115) !important ;
     .intro-image {
       width: 450px; /* Smaller image size for mobile */
       height: 450px;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
     }
   
     /* Ensure all content in the intro container is centered */

@@ -14,7 +14,7 @@
 }
 
 .nav-link, .resume-button {
-  margin-right: 25px; /* Ensure consistent margin for all items */
+  margin-right: 20px; /* Ensure consistent margin for all items */
   font-size: large;
   color: white !important;
   font-weight: 300;

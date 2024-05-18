@@ -91,7 +91,7 @@ const Introduction = () => {
               <motion.h1
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ ease: "easeInOut", duration: 1 }}
+                transition={{ ease: "easeInOut", duration: 1.3 }}
               >
                 Hello, I'm Joshua Lopez!
               </motion.h1>
