@@ -11,7 +11,7 @@ body {
 
 @media (max-width: 768px) { /* Adjusts settings for mobile devices */
   body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.977)) !important; /* Gradient black background with the image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.977)) !important; /* Gradient black background with the image */
     /* Set background color to black */
   }
 }
