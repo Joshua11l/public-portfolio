@@ -42,7 +42,7 @@ border-color: rgb(0, 56, 115) !important ;
     object-fit: cover; /* Ensures the image covers the area without distortion */
     width: 450px; /* Set a specific width, adjust as needed */
     height: 450px; 
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* White box shadow for a 'lifted' effect */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* White box shadow for a 'lifted' effect */
 }
 
   
@@ -107,19 +107,17 @@ border-color: rgb(0, 56, 115) !important ;
     }
   
     /* Ensure all content in the intro container is centered */
-    .intro-container, .intro-message, .contact-me-btn {
+    .intro-container, .intro-message {
       text-align: center;
-      display: flex;
-      flex-direction: column;
+      
       justify-content: center;
       align-items: center;
     }
   
     /* Adjust button size and spacing for mobile */
     .contact-me-btn {
-      width: 10rem !important;
-      padding: 10px 20px; /* Larger touch area for easier interaction */
-      font-size: 1.2rem; /* Larger font size for visibility */
+      font-size: 1.2rem;
+      margin-bottom: 3rem !important; /* Larger font size for visibility */
     }
   }
   

@@ -79,6 +79,11 @@
   .navbar-transparent {
     background-color: black !important; /* Fully opaque black for mobile */
   }
+
+  .logo {
+    cursor: pointer;
+    padding-left: 0;
+  }
   
   .navbar-collapse {
     display: flex;
