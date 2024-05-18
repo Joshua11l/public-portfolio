@@ -1,7 +1,6 @@
 .custom-container {
     height: 80vh; /* Container height as 80% of the viewport height */
-    margin-top: 8rem;
-    margin-bottom: 12rem; /* Top margin for scrolling if content exceeds container height */
+    margin-bottom: 8rem; /* Top margin for scrolling if content exceeds container height */
     max-width: 960px; /* Maximum width of the container */
     padding: 20px; /* Padding around the content */
 }

@@ -1,17 +1,15 @@
-
+/* General styles for the navbar */
 .navbar-transparent {
   background-color: transparent !important;
   transition: background-color 0.4s ease-in-out;
 }
 
 .navbar-dark.bg-dark {
-  background-color: rgba(0, 0, 0, 0.75) !important; /* Adjust opacity to desired level */
+  background-color: black !important; /* Solid black background */
   transition: background-color 0.4s ease-in-out;
-  backdrop-filter: blur(10px); /* Apply a blur effect to elements behind the navbar */
 }
 
 .logo {
-  margin-left: 25px;
   cursor: pointer;
 }
 
@@ -65,38 +63,46 @@
   color: #00aeff; /* Optional: change text color on hover */
 }
 
-/* This sets the navbar toggler color */
-
-
+/* Animation for sliding in the navbar */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 
 /* Responsive behavior and styling for mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar-dark.bg-dark,
   .navbar-transparent {
     background-color: black !important; /* Fully opaque black for mobile */
   }
-  .navbar-light .navbar-toggler {
-    background-color: rgb(0, 0, 0) !important;
-    color: black !important;
-    margin-right: 1rem; /* Lightens the border slightly */
-  }
   
-}
-
-@media (max-width: 768px) {
   .navbar-collapse {
-      justify-content: center; /* Center the nav items */
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    align-items: center; /* Center the nav items horizontally */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; /* Width of the slide-in menu */
+    background-color: black !important;
+    transform: translateX(-100%); /* Start off-screen */
+    animation: slideIn 0.4s forwards; /* Slide in animation */
   }
 
   .nav-link, .resume-button {
-      margin: 10px 5px; /* Increase spacing between items */
-      text-align: center; /* Ensure text in nav items is centered */
+    display: block; /* Ensure nav items are block elements */
+    margin: 10px 0; /* Increase spacing between items */
+    text-align: center; /* Ensure text in nav items is centered */
+    width: 100%; /* Ensure full width for clickable area */
   }
 
- 
-
   .navbar-toggler {
-      margin-left: auto;
-       /* Push the toggler to the right on smaller screens */
+    margin-left: auto; /* Push the toggler to the right on smaller screens */
   }
 }
