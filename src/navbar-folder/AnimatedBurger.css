@@ -33,7 +33,7 @@
   }
   
   .burger-button.open .burger-line.one {
-    transform: rotate(45deg) translate(5px, 5.5px);
+    transform: rotate(45deg) translate(6px, 6px);
   }
   
   .burger-button.open .burger-line.two {
