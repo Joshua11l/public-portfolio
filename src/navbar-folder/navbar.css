@@ -87,7 +87,7 @@
 /* Animation for sliding in the navbar */
 @keyframes slideIn {
   from {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
   to {
     transform: translateX(0);
@@ -99,19 +99,17 @@
   .nav-link, .resume-button {
     color: white !important;
   }
-  
+
   .navbar-dark.bg-dark,
   .navbar-transparent {
     background-color: black !important;
   }
 
-  
-
   .logo {
     cursor: pointer;
     padding-left: 0;
   }
-  
+
   .navbar-collapse {
     display: flex;
     flex-direction: column;
@@ -119,19 +117,25 @@
     align-items: center; /* Center the nav items horizontally */
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0; /* Change to right */
     height: 100%;
-    width: 100%; /* Width of the slide-in menu */
+    width: 80%; /* Width of the slide-in menu */
     background-color: black !important;
-    transform: translateX(-100%); /* Start off-screen */
+    transform: translateX(100%); /* Start off-screen */
     animation: slideIn 0.4s forwards; /* Slide in animation */
   }
 
-  .nav-link, .resume-button {
+  .nav-link {
     display: block; /* Ensure nav items are block elements */
     margin: 10px 0; /* Increase spacing between items */
-    text-align: center; /* Ensure text in nav items is centered */
+    text-align: left; /* Ensure text in nav items is centered */
     width: 100%; /* Ensure full width for clickable area */
+  }
+
+  .resume-button {
+    display: block; /* Ensure nav items are block elements */
+    margin: 10px 0;
+    margin-left: 10px;
   }
 
   .resume-button {
@@ -141,4 +145,6 @@
   .navbar-toggler {
     margin-left: auto; /* Push the toggler to the right on smaller screens */
   }
+
+  
 }
