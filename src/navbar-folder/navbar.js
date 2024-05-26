@@ -6,17 +6,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logoImg from './logo1.PNG';
 import './navbar.css';
 import AnimatedBurger from './AnimatedBurger';
+import 'intersection-observer';
 
-const NavBar = () => {
+const NavBar = ({ sectionRefs }) => {
   const [navBackground, setNavBackground] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [activeLink, setActiveLink] = useState('');
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
       setNavBackground(true);
     } else {
       setNavBackground(false);
+      setActiveLink('');
     }
   };
 
@@ -25,14 +28,33 @@ const NavBar = () => {
       setWindowWidth(window.innerWidth);
     };
 
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const { about, experience, projects, contact } = sectionRefs;
+
+      if (contact.current && contact.current.offsetTop <= scrollY + 100) {
+        setActiveLink('contact');
+      } else if (projects.current && projects.current.offsetTop <= scrollY + 100) {
+        setActiveLink('projects');
+      } else if (experience.current && experience.current.offsetTop <= scrollY + 100) {
+        setActiveLink('experience');
+      } else if (about.current && about.current.offsetTop <= scrollY + 100) {
+        setActiveLink('about');
+      } else {
+        setActiveLink('');
+      }
+    };
+
     window.addEventListener('scroll', changeBackground);
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', changeBackground);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [sectionRefs]);
 
   // Function to scroll to the top
   const scrollToTop = () => {
@@ -46,22 +68,11 @@ const NavBar = () => {
   const toggleNavbar = () => setIsOpen(!isOpen);
 
   // Function to handle link click and set active state
-  const handleLinkClick = (e) => {
-    const links = document.querySelectorAll('.nav-link');
-    links.forEach(link => link.classList.remove('active'));
-    if (e.currentTarget) {
-      e.currentTarget.classList.add('active');
-    }
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
     if (window.innerWidth < 992) {
       toggleNavbar();
     }
-
-    // Remove the active class after a delay
-    setTimeout(() => {
-      if (e.currentTarget) {
-        e.currentTarget.classList.remove('active');
-      }
-    }, 300); // Adjust the delay as needed
   };
 
   return (
@@ -75,16 +86,16 @@ const NavBar = () => {
         </div>
         <div className={`${isOpen ? 'show' : ''} collapse navbar-collapse`} id="responsive-navbar-nav">
           <Nav className={`ms-auto ${isOpen ? 'nav-open' : ''}`}>
-            <Nav.Link href="#about" onClick={handleLinkClick}>
+            <Nav.Link href="#about" className={activeLink === 'about' ? 'active' : ''} onClick={() => handleLinkClick('about')}>
               <FontAwesomeIcon icon={faUser} /> About
             </Nav.Link>
-            <Nav.Link href="#experience" onClick={handleLinkClick}>
+            <Nav.Link href="#experience" className={activeLink === 'experience' ? 'active' : ''} onClick={() => handleLinkClick('experience')}>
               <FontAwesomeIcon icon={faBriefcase} /> Experience
             </Nav.Link>
-            <Nav.Link href="#projects" onClick={handleLinkClick}>
+            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active' : ''} onClick={() => handleLinkClick('projects')}>
               <FontAwesomeIcon icon={faProjectDiagram} /> Projects
             </Nav.Link>
-            <Nav.Link href="#contact" onClick={handleLinkClick}>
+            <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active' : ''} onClick={() => handleLinkClick('contact')}>
               <FontAwesomeIcon icon={faEnvelope} /> Contact Me
             </Nav.Link>
             <Button

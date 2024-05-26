@@ -32,19 +32,6 @@ const projects = [
 ];
 
 const Projects = () => {
-    return (
-        <Container className="mt-5 projects-section" id="projects">
-            <h2 className="text-center mb-3 projects-header">My Projects</h2>
-            <Row>
-                {projects.map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                ))}
-            </Row>
-        </Container>
-    );
-};
-
-const ProjectCard = ({ project }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -57,30 +44,59 @@ const ProjectCard = ({ project }) => {
         }
     }, [controls, inView]);
 
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.3,
+            },
+        },
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+    };
+
     return (
-        <Col md={6} lg={4} className="mb-4">
-            <motion.div
+        <Container className="mt-5 projects-section" id="projects">
+            <motion.h2 
+                className="text-center mb-3 projects-header"
                 ref={ref}
                 initial="hidden"
                 animate={controls}
-                variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+                variants={containerVariants}
             >
-                <Card className="project-card">
-                    <Card.Img variant="top" src={project.imageUrl} />
-                    <Card.Body>
-                        <Card.Title className="project-card-title">{project.title}</Card.Title>
-                        <Card.Text className="project-card-description">{project.description}</Card.Text>
-                        <Card.Text className="project-card-technologies">
-                            <strong>Technologies:</strong> {project.technologies}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                My Projects
+            </motion.h2>
+            <motion.div
+                className="row"
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={containerVariants}
+            >
+                {projects.map((project) => (
+                    <Col md={6} lg={4} className="mb-4" key={project.id}>
+                        <motion.div
+                            variants={cardVariants}
+                            transition={{ duration: 0.5, ease: 'easeOut' }}
+                        >
+                            <Card className="project-card">
+                                <Card.Img variant="top" src={project.imageUrl} />
+                                <Card.Body>
+                                    <Card.Title className="project-card-title">{project.title}</Card.Title>
+                                    <Card.Text className="project-card-description">{project.description}</Card.Text>
+                                    <Card.Text className="project-card-technologies">
+                                        <strong>Technologies:</strong> {project.technologies}
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </motion.div>
+                    </Col>
+                ))}
             </motion.div>
-        </Col>
+        </Container>
     );
 };
 

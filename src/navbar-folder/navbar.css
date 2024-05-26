@@ -1,7 +1,9 @@
-/* General styles for the navbar */
 .navbar-transparent {
   background-color: transparent !important;
   transition: background-color 0.4s ease-in-out;
+  border-bottom: 1px solid rgb(215, 215, 215); /* Add a transparent border initially */
+
+  
 }
 
 .navbar-dark.bg-dark {
@@ -16,10 +18,10 @@
 .nav-link, .resume-button {
   margin-right: 20px; /* Ensure consistent margin for all items */
   font-size: large;
-  color: white !important;
   font-weight: 300;
   letter-spacing: 1px;
   position: relative; /* Required for positioning the pseudo-element */
+  color: black !important; /* Default color */
 }
 
 .resume-button:hover, .resume-button:focus {
@@ -30,7 +32,7 @@
 
 .resume-button {
   background: none; /* Remove default background to match outline effect */
-  border-color: white; /* Set the border color to white to match outline-light variant */
+  border-color: black !important; /* Set the border color to white to match outline-light variant */
   border-radius: 0; /* Optional: Remove border radius if you prefer squared buttons */
   margin-right: 25px;
 }
@@ -51,11 +53,30 @@
   width: 100%;
 }
 
+/* Active state - underline and blue text color */
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: rgb(65, 157, 255) !important;
+}
+
+
+/* Hover effect - expands the underline from left to right */
+.nav-link:hover::after {
+  width: 100%;
+}
+
 /* Additional styles for fixed-top and color transitions */
-.navbar-dark.bg-dark .nav-link,
-.navbar-transparent .nav-link {
-  color: #fff; /* Ensures text is white for visibility */
+.navbar-dark.bg-dark .nav-link {
+  color: #fff !important ;
   transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.navbar-dark.bg-dark .resume-button {
+  border-color: white !important;
+  color: white !important;
 }
 
 .navbar-dark.bg-dark .nav-link:hover,
@@ -75,10 +96,16 @@
 
 /* Responsive behavior and styling for mobile devices */
 @media (max-width: 992px) {
+  .nav-link, .resume-button {
+    color: white !important;
+  }
+  
   .navbar-dark.bg-dark,
   .navbar-transparent {
-    background-color: black !important; /* Fully opaque black for mobile */
+    background-color: black !important;
   }
+
+  
 
   .logo {
     cursor: pointer;
@@ -105,6 +132,10 @@
     margin: 10px 0; /* Increase spacing between items */
     text-align: center; /* Ensure text in nav items is centered */
     width: 100%; /* Ensure full width for clickable area */
+  }
+
+  .resume-button {
+    border-color: white !important;
   }
 
   .navbar-toggler {

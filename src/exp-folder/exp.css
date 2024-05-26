@@ -1,9 +1,20 @@
 .custom-container {
     height: 80vh; /* Container height as 80% of the viewport height */
     margin-bottom: 8rem; /* Top margin for scrolling if content exceeds container height */
-    max-width: 960px; /* Maximum width of the container */
-    padding: 20px; /* Padding around the content */
+    width: 100%; /* Maximum width of the container */
+    padding: 20px; 
+    
+    /* Padding around the content */
 }
+
+.experience-container {
+    border: 1px solid lightgray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, black, rgb(41, 41, 41));
+    padding: 20px;
+}
+
+
 
 /* Sets text color to white for descriptions */
 .description-text {
@@ -26,16 +37,15 @@
 }
 
 
-.exp-title h2 {
+.exp-title {
     font-size: 3rem; /* Larger heading size */
     color: rgb(65, 157, 255); /* Dark gray text */
     font-weight: 700;
-    margin-bottom: 2rem; /* Space below the title */
 }
 
 .exp-work-title {
     font-size: 2rem; /* Set size for work title */
-    color: #fff; /* White color for visibility */
+    color: #fff ; /* White color for visibility */
     margin-bottom: 1.5rem; /* Space below the work title */
 }
 .nav-pills .nav-link {
@@ -44,7 +54,7 @@
     font-size: 1.1rem;
     font-weight: bold; /* Larger font size for better readability */
     border-radius: 5px; /* Rounded corners for aesthetic preference */
-    color: #ccc; /* Lower contrast for inactive state */
+    color: #ffffff !important; /* Lower contrast for inactive state */
     text-decoration: none; /* Removes underline from links */
     display: block; /* Ensures the link uses the full space of its container */
     opacity: 0.6; /* Reduced opacity for inactive links */
@@ -63,6 +73,53 @@
     opacity: 1; /* Full opacity for active link */
 }
 
+/* Add styles for the 'Companies I've Worked With' text */
+.companies-title {
+    font-size: 2.5rem; /* Larger heading size */
+    color: rgb(65, 157, 255); /* Dark gray text */
+    font-weight: 700;
+    margin-top: -1rem;
+}
+
+/* Customize the carousel slider buttons */
+.slick-prev, .slick-next {
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Additional custom styles */
+.custom-container {
+    padding: 20px;
+    margin-bottom: 20rem !important;
+}
+
+.carousel-image-container {
+    padding: 0 5px; /* Adjust padding to make images close to each other */
+}
+
+.carousel-image {
+    width: 200px; /* Make the images small */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+.description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+.slick-dots li button:before {
+    font-size: 1.2rem;
+}
+
+
+
+
 
 @media (max-width: 500px) {
     .custom-container {
@@ -73,6 +130,22 @@
         padding: 6px 12px; /* Even smaller padding for very small screens */
         font-size: 0.8rem; /* Even smaller font size for better fit */
     }
+
+    .carousel-image-container {
+        padding: 0 5px;
+    }
+    
+    .carousel-image {
+        width: 100px; /* Make the images small */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .custom-container {
+        margin-bottom: 30rem !important;
+    }
+   
 
     
 }

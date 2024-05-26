@@ -1,123 +1,162 @@
 .intro-container {
-    height: 100vh;
-  }
-  
-  .intro-mark {
-    color: white !important;
-  }
-  
-  .intro-hello {
-    color: white;
-  }
-  
-  .intro-content-container {
-    height: 100%;
-  }
-
- 
-  .intro-message h1 {
-    font-size: 3.5rem;
-    color: rgba(65, 157, 255, 0.953);
-    font-weight: 700;
-    padding-left: 3rem;
-  }
-
-  .contact-me-btn {
-    background-color: rgb(0, 100, 206) !important;
-    color: white;
-    font-weight: bold;
-    font-size: large;
-    border: 1px solid rgb(0, 100, 206) !important;
-  }
-
-  .contact-me-btn:hover {
-background-color: rgb(0, 56, 115) !important;
-border-color: rgb(0, 56, 115) !important ;
-  }
-  
-
-  .intro-image {
-    border-radius: 50%; /* Makes the image round */
-    border: 5px solid rgba(0, 0, 0, 0.6); /* Transparent black border */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    width: 450px; /* Set a specific width, adjust as needed */
-    height: 450px; 
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* White box shadow for a 'lifted' effect */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  position: relative;
 }
 
-  
-  .highlight-name {
-    font-size: 2rem; /* Increases the font size */
-    font-weight: bold; /* Makes the text bold */
-    color: rgb(65, 157, 255); /* Changes the text color to blue */
-  }
+.intro-content-container {
+  max-width: 1200px;
+  padding: 50px 15px;
+}
 
-  .intro-text {
-    font-size: 1.8rem;
-    color: white;
-    font-weight: 300 !important;
-    padding-left: 2rem;
+.scroll-icon-container {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 
-  }
+.intro-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+}
 
-  .intro-container {
-    padding-top: 5rem;
-  }
+.img-left {
+  left: 0;
+  transform: translateX(-60%);
+  /* Adjust as needed to fine-tune positioning */
+}
 
-  .intro-message {
-    margin-left: 1rem;
-  }
+.img-right {
+  right: 0;
+  transform: translateX(60%); /* Adjust as needed to fine-tune positioning */
+}
 
-  .typing-cursor {
+
+.intro-message h1 {
+  font-size: 7rem;
+  font-weight: 650;
+  margin-top: 2rem;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.intro-message .highlight {
+  color: rgb(65, 157, 255); /* Blue color */
+}
+
+.intro-message .intro-text {
+  font-size: 1.37rem;
+  margin-bottom: 20px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 2em;
+  animation: blink 1s infinite;
+}
+
+.typing-cursor.visible {
+  opacity: 1;
+}
+
+.typing-cursor:not(.visible) {
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
     opacity: 1;
-    animation: blink 1s step-start infinite;
   }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.scroll-down-section {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-down-text {
+  font-size: large;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 0rem !important;
+
+}
+
+.scroll-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-down-text i {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.intro-image {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.intro-image.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 1050px) {
+  .image-container {
+    padding: 4rem;
+   
+  }
+}
 
 
-  
-  
-  .visible {
-    visibility: visible;
-  }
-  
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
+@media (max-width: 768px) {
+  .image-container {
+    display: none;
   }
 
-  @media (max-width: 768px) {
-    .intro-message h1 {
-      font-size: 3rem;
-      padding-left: 0;/* Add padding to keep text from touching screen edges */
-      /* Smaller font size for mobile */
-    }
-  
-    .intro-text {
-      font-size: 1.7rem; /* Adjust text size for better readability on mobile */
-      padding: 0 20px; 
-      padding-left: 0;/* Add padding to keep text from touching screen edges */
-    }
-  
-    .intro-image {
-      width: 450px; /* Smaller image size for mobile */
-      height: 450px;
-      margin-top: 3rem;
-      margin-bottom: 2rem;
-    }
-  
-    /* Ensure all content in the intro container is centered */
-    .intro-container, .intro-message {
-      text-align: center;
-      
-      justify-content: center;
-      align-items: center;
-    }
-  
-    /* Adjust button size and spacing for mobile */
-    .contact-me-btn {
-      font-size: 1.2rem;
-      margin-bottom: 3rem !important; /* Larger font size for visibility */
-    }
+  .intro-message h1 {
+    font-size: 3rem !important;
   }
-  
+
+  .intro-message .intro-text {
+    font-size: 1rem;
+  }
+
+  .scroll-down-text {
+    font-size: large;
+  }
+}
