@@ -119,7 +119,7 @@
     top: 0;
     right: 0; /* Change to right */
     height: 100%;
-    width: 80%; /* Width of the slide-in menu */
+    width: 85%; /* Width of the slide-in menu */
     background-color: black !important;
     transform: translateX(100%); /* Start off-screen */
     animation: slideIn 0.4s forwards; /* Slide in animation */

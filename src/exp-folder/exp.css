@@ -136,7 +136,7 @@
     }
     
     .carousel-image {
-        width: 100px; /* Make the images small */
+        width: 120px; /* Make the images small */
         height: auto;
         display: block;
         margin: 0 auto;
