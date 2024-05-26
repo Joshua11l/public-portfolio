@@ -86,23 +86,7 @@ const Experience = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
+        autoplaySpeed: 2000, // Make the slider slide quicker
     };
 
     const { ref: workRef, inView: workInView } = useInView({
@@ -136,7 +120,7 @@ const Experience = () => {
             >
                 <div className="experience-container">
                     <Row>
-                        <Col xs={12} md={3}>
+                        <Col xs={3}>
                             <Nav variant="pills" className="flex-column" onSelect={handleSelect}>
                                 {experiences.map((exp) => (
                                     <Nav.Item key={exp.id}>
@@ -150,7 +134,7 @@ const Experience = () => {
                                 ))}
                             </Nav>
                         </Col>
-                        <Col xs={12} md={9}>
+                        <Col xs={9}>
                             {experiences.filter(exp => exp.id === activeId).map(exp => (
                                 <motion.div
                                     key={exp.id}
