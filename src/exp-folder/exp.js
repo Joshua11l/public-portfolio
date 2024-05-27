@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -138,9 +138,9 @@ const Experience = () => {
                             {experiences.filter(exp => exp.id === activeId).map(exp => (
                                 <motion.div
                                     key={exp.id}
-                                    initial={{ opacity: 0, x: -100 }}
+                                    initial={{ opacity: 0, x: 40 }}
                                     animate={workInView ? { opacity: 1, x: 0 } : {}}
-                                    exit={{ opacity: 0, x: 100 }}
+                                    exit={{ opacity: 0, x: -100 }}
                                     transition={{ duration: 0.5 }}
                                     className="experience-box"
                                 >
